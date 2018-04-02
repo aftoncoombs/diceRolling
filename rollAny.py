@@ -22,7 +22,7 @@ def rollAny(n, k):
     ## to produce a value >= k. That is how n will map to k.
     ## j is k/n if k/n is evenly divisible, and k/n + 1 else.
     ## If j is too big for n, first map from n to j instead of n to k.
-    if j > n**2:
+    if j > n:
         j = rollAny(n, j)
     maxFirst = math.ceil(k / float(j))
     firstRoll = random.randint(1, n)
