@@ -10,8 +10,8 @@ import math
 def rollAny(n, k):
     ## n = number of die faces
     ## k = max of output numbers with equal probability
-    if (n==1):
-        print("No one-sided dice allowed.")
+    if (n<2):
+        print("No dice with side counts < 2. That doesn't make sense.")
         return(None)
     ## Get the dimensions of n required to produce k.
     ## This determines the number of times modTrick will need to
