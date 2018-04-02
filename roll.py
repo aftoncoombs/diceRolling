@@ -11,7 +11,7 @@ def roll(n, k):
     ## k = max of output numbers with equal probability
     if (k > n**2):
         print("k must be <= n^2")
-        break
+        return(None)
     j = k // n + int(k % n > 0)
     ## Calculate j, representing the number n would need to multipled by
     ## to produce a value >= k. That is how n will map to k.
