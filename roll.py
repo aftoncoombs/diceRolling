@@ -9,7 +9,7 @@ import random
 def roll(n, k):
     ## n = number of die faces
     ## k = max of output numbers with equal probability
-    if (k > n^2):
+    if (k > n**2):
         print("k must be <= n^2")
         break
     j = k // n + int(k % n > 0)
