@@ -5,6 +5,7 @@
 ## Afton Coombs
 ## aftoncoombs@gmail.com
 import random
+import math
     
 def roll(n, k):
     ## n = number of die faces
@@ -16,11 +17,14 @@ def roll(n, k):
     ## Calculate j, representing the number n would need to multipled by
     ## to produce a value >= k. That is how n will map to k.
     ## j is k/n if k/n is evenly divisible, and k/n + 1 else
-    maxFirst = k / j
+    maxFirst = math.ceil(k / float(j))
     firstRoll = random.randint(1, n)
     ## Do not accept values that would potentialy yield a finalRoll > k
     while (firstRoll > maxFirst):
         firstRoll = random.randint(1, n)
     secondRoll = random.randint(1, n)
     finalRoll = firstRoll * j - secondRoll % j
+    while (finalRoll > k):
+        secondRoll = random.randint(1, n)
+        finalRoll = firstRoll * j - secondRoll % j
     return finalRoll
